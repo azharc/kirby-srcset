@@ -1,5 +1,12 @@
 <?php 
 
+/**
+ * Generate srcset Image Tags
+ *
+ * @version 0.1
+ * @author Azhar Chougle <az@azmataz.com>
+ */
+
 // create srcset images
 function img($image, $options = array()) {
 	// defaults
