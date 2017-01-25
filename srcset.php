@@ -101,4 +101,18 @@ function img($image, $options = array()) {
 
 	return html::tag('img', null, $attr);
 }
+
+// create output handing for svg
+function svg($url, $class = "") {
+	if (preg_match("/\.(svg)$/", $url)) {
+		$output = "";
+		$output .= "<div class='svg $class'>";
+		$output .= @file_get_contents($url);
+		$output .= "</div>";
+		return $output;
+	} else {
+		trigger_error("SVG snippet received a non-SVG file!", E_USER_ERROR);
+	}
+}
+
  ?>
